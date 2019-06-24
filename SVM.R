@@ -21,6 +21,7 @@ loans$delinq.2yrs   <- as.factor(loans$delinq.2yrs)
 loans$pub.rec       <- as.factor(loans$pub.rec)
 loans$not.fully.paid <- as.factor(loans$not.fully.paid)
 
+
 #plot the graph data affect not fully paid column
 ggplot(loans,aes(fico)) + geom_histogram(aes(fill=not.fully.paid),color='black')+theme_bw()
 
@@ -55,13 +56,14 @@ predicted.values <- predict(tunned.svm, test[1:13])
 table(predicted.values, test$not.fully.paid)
 
 # Accuracy checking
-accuracy <- (2133 + 201)/(2133 + 358 + 280 + 102)
+accuracy <- (2133 + 102)/(2133 + 358 + 280 + 102)
 print(accuracy)
 
 
 # Recall  fraction of the document that relevent and succesfully retrived
 recall <- 2133/(2133+280)
 print(recall)
+
 
 
 
