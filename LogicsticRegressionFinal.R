@@ -54,4 +54,11 @@ plot(pred)
 accuracy <- 2896/(2896+525)
 print(accuracy)
 
+#Precison function
+precision <- 2893/(2893+5)
+print(precision)
+
+#recall
+recall <- 2893/(2893+520)
+print(recall)
 
