@@ -25,6 +25,9 @@ loan_test=loan[-s,]
 ######-----random forest model--------#######
 rf.loan=randomForest(as.factor(not.fully.paid)~.,data=loan_train)
 
+#garbage collection
+gc()
+
 #Build random forest model train data
 rf.loan=randomForest(not.fully.paid ~ .,data = loan_train,ntree=300,proximity=TRUE,importance=TRUE,do.trace=300)#U CAN USE ARGUMENT do.trace=T
 
